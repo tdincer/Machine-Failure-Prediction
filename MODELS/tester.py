@@ -194,28 +194,6 @@ class BlendClassifier(BaseEstimator, ClassifierMixin):
         return roc_auc_score(y_true, y_pred)
 
 
-class hill_climb:
-    def __init__(self, metric, direction, n_steps=10):
-        self.metric = metric
-        self.direction = direction
-        self.weights = {}
-        self.n_steps = n_steps
-
-    def fit(self, x, y_true, oof_preds):
-        self.scores = {est_name: self.metric(y_true, oof_preds[est_name]) for est_name in oof_preds}
-
-        # Sort
-        if self.direction == 'maximize':
-            reverse = True
-        else:
-            reverse = False
-        self.scores = dict(sorted(self.scores.items(), key=lambda x: x[1], reverse=reverse))
-
-        # best_score = list(self.scores.items())[0]
-        # for est_name in ind_score[1:]:
-        #    for w in np.linspace(0, 1, n_steps, endpoint=True):
-
-
 def main():
     x_train, y_train, x_test, y_test, NUMS, CATS = get_train_test_data()
 
