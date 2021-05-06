@@ -1,2 +1,6 @@
 .DS_Store
 SHAPLEY
+MODELS/pyspark_pipeline.py
+MODELS/__pycache__
+MODELS/catboost_info
+MODELS/tester2.py
