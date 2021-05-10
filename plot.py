@@ -17,7 +17,6 @@ y_test = y_test.reset_index(drop=True)
 sys.path.insert(1, 'MODELS')
 model = load('./MODELS/lgb.model')
 
-
 NTIME = len(y_test)
 
 fig, (ax6, ax0, ax1, ax2, ax3, ax4, ax5) = plt.subplots(7, sharex=True, figsize=(8, 7),
@@ -89,8 +88,10 @@ def animate(i):
 
 anim = an.FuncAnimation(fig, animate, frames=len(y_test), interval=1, blit=True)
 
-Writer = an.writers['ffmpeg']
-writer = Writer(fps=20, metadata=dict(artist='Me'), bitrate=1800)
+#Writer = an.writers['ffmpeg']
+#writer = Writer(fps=20, metadata=dict(artist='Me'), bitrate=1800)
 
-file_name = os.path.join('VISUALS', 'anim.mp4')
-anim.save(file_name, writer=writer, dpi=500)
+#file_name = os.path.join('VISUALS', 'anim.mp4')
+#anim.save(file_name, writer=writer, dpi=500)
+file_name = os.path.join('VISUALS', 'anim.gif')
+anim.save(file_name, writer='imagemagick')

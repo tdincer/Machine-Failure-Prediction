@@ -20,7 +20,7 @@ Run the following command to tune the xgboost model in 20 trials.
 python3 tuner.py -e xgb -nt 20
 ```
 
-All trials are stored and their corresponding scores are stored in study_{est_name}.pkl. files.
+Results of the optimization trials are stored in the STUDY folder.
 
 ### Model Testing
 
