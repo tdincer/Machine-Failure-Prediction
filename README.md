@@ -4,6 +4,8 @@ Predictive maintanence (PdM) is the maintanence of machines at a predicted futur
 
 This repository contains deployable end-to-end classifiers to predict the probability whether a machine failure will occur or not. The models include state-of-the-art gradient boosted decision tree models: xgboost, lightgbm, and catboost.
 
+<video src="/Users/tdincer/ML/PdM/VISUALS/anim.mp4"></video>
+
 ## Data
 
 The data used in this work, taken from [Matzka (2020)](https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset), is available in the DATA folder. It consists of 10,000 data points stored as rows with features like product type, air temperature, process temperature, rotational speed, torque wear, machine failure. The machine failures are grouped into 5 subcategories. For simplicity, only the main failure parameter was predicted. A concise summary of the data, pair plots, and the distribution of the labels can be found in [this](./EDA/EDA.ipynb) notebook.
