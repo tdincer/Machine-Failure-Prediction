@@ -6,7 +6,7 @@ This repository contains deployable end-to-end classifiers to predict the probab
 
 ## Data
 
-The data used in this work, which is taken from [Matzka (2020)](https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset), is available in the DATA folder. It consists of 10,000 data points stored as rows with features like product type, air temperature, process temperature, rotational speed, torque wear, machine failure. The machine failures are grouped into 5 subcategories. For simplicity, only the subcategories were not predicted. A concise summary of the data, pair plots, and the distribution of the labels can be found in [this](./EDA/EDA.ipynb) notebook.
+The data used in this work, taken from [Matzka (2020)](https://archive.ics.uci.edu/ml/datasets/AI4I+2020+Predictive+Maintenance+Dataset), is available in the DATA folder. It consists of 10,000 data points stored as rows with features like product type, air temperature, process temperature, rotational speed, torque wear, machine failure. The machine failures are grouped into 5 subcategories. For simplicity, only the main failure parameter was predicted. A concise summary of the data, pair plots, and the distribution of the labels can be found in [this](./EDA/EDA.ipynb) notebook.
 
 ## Modeling
 
@@ -14,10 +14,10 @@ The modeling was done with the sklearn api and sklearn api of the xgboost, light
 
 ### Parameter Optimization
 
-Run the the following command in MODELS folder to tune the xgboost model in 20 trials.
+Run the following command to tune the xgboost model in 20 trials.
 
 ```shell
-python3 tuner.py -est-name xgb -nt 20
+python3 tuner.py -e xgb -nt 20
 ```
 
 All trials are stored and their corresponding scores are stored in study_{est_name}.pkl. files.
@@ -30,7 +30,7 @@ After parameter optimization, the models can be re-trained and saved by runing t
 python3 tester.py
 ```
 
-The command saves two kinds of files: models with file names {est-name}.model (e.g. xgb.model) and oof predictions with file names {est-name}_oof_preds.npy (e.g. xgb_oof_preds.npy).
+The command saves the trained models to the MODEL folder.
 
 ## Requirements
 
