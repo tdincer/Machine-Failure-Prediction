@@ -4,7 +4,7 @@ Predictive maintanence (PdM) is the maintanence of machines at a predicted futur
 
 This repository contains deployable end-to-end classifiers to predict the probability whether a machine failure will occur or not. The models include state-of-the-art gradient boosted decision tree models: xgboost, lightgbm, and catboost.
 
-![anim](./VISUALS/anim.gif)
+<video src="./VISUALS/anim.mp4"></video>
 
 ## Data
 
